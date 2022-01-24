@@ -1,5 +1,3 @@
-import sqlite3
-from sqlite3.dbapi2 import connect
 from flask_restful import Resource, reqparse
 from models.user import UserModel
 

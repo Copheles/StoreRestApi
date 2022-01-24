@@ -1,7 +1,5 @@
-from sqlite3.dbapi2 import connect
 from flask_restful import Resource, reqparse
 from flask_jwt import jwt_required 
-import sqlite3
 from models.item import ItemModel
 
 class Item(Resource):
@@ -10,13 +8,13 @@ class Item(Resource):
             type=float,
             required=True,
             help='This field cannot be left blank'
-        )
+    )
 
     parser.add_argument('store_id',
             type=int,
             required=True,
             help='Every item need a store id'
-        )
+    )
 
     @jwt_required()
     def get(self, name):
